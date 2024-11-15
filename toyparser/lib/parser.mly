@@ -31,5 +31,6 @@ expr:
   | e1 = expr; MINUS; e2 = expr { Sub(e1,e2) }
   | e1 = expr; MULT; e2 = expr { Mult(e1,e2) }
   | e1 = expr; DIV; e2 = expr { Div(e1,e2) }
+  | MINUS; e1 = expr { Neg(e1) }
   | LPAREN; e=expr; RPAREN {e}
 ;
