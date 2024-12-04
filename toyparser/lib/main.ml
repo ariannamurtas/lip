@@ -9,15 +9,6 @@ let parse (s : string) : ast =
 
 type int_or_err = (int, string) Result.t
 
-let ( ==> ) (res : int_or_err) (f : int -> int_or_err) : int_or_err =
-  match res with
-  | Ok value -> f value
-  | Error msg -> Error msg
-
-let string_of_intorerr : int_or_err -> string = function
-  | Ok n -> string_of_int n
-  | Error msg -> msg
-
 
 (* eval : ast -> result *)
 
