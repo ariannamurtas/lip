@@ -1,0 +1,302 @@
+
+** Conflict (shift/reduce) in state 39.
+** Token involved: SEQ
+** This state is reached from prog after reading:
+
+WHILE expr DO cmd
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+(?)
+
+** In state 39, looking ahead at SEQ, shifting is permitted
+** because of the following sub-derivation:
+
+WHILE expr DO cmd 
+              cmd . SEQ cmd 
+
+** In state 39, looking ahead at SEQ, reducing production
+** cmd -> WHILE expr DO cmd
+** is permitted because of the following sub-derivation:
+
+cmd SEQ cmd // lookahead token appears
+WHILE expr DO cmd . 
+
+** Conflict (shift/reduce) in state 38.
+** Token involved: SEQ
+** This state is reached from prog after reading:
+
+IF expr THEN cmd ELSE cmd
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+(?)
+
+** In state 38, looking ahead at SEQ, shifting is permitted
+** because of the following sub-derivation:
+
+IF expr THEN cmd ELSE cmd 
+                      cmd . SEQ cmd 
+
+** In state 38, looking ahead at SEQ, reducing production
+** cmd -> IF expr THEN cmd ELSE cmd
+** is permitted because of the following sub-derivation:
+
+cmd SEQ cmd // lookahead token appears
+IF expr THEN cmd ELSE cmd . 
+
+** Conflict (shift/reduce) in state 36.
+** Token involved: SEQ
+** This state is reached from prog after reading:
+
+cmd SEQ cmd
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+(?)
+
+** In state 36, looking ahead at SEQ, shifting is permitted
+** because of the following sub-derivation:
+
+cmd SEQ cmd 
+        cmd . SEQ cmd 
+
+** In state 36, looking ahead at SEQ, reducing production
+** cmd -> cmd SEQ cmd
+** is permitted because of the following sub-derivation:
+
+cmd SEQ cmd // lookahead token appears
+cmd SEQ cmd . 
+
+** Conflict (shift/reduce) in state 24.
+** Tokens involved: SUB MUL LEQ EQ ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE NOT expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 24, looking ahead at SUB, reducing production
+** expr -> NOT expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+NOT expr . 
+
+** In state 24, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+NOT expr 
+    expr . SUB expr 
+
+** Conflict (shift/reduce) in state 22.
+** Tokens involved: SUB OR MUL LEQ EQ AND ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr ADD expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 22, looking ahead at SUB, reducing production
+** expr -> expr ADD expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr ADD expr . 
+
+** In state 22, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr ADD expr 
+         expr . SUB expr 
+
+** Conflict (shift/reduce) in state 20.
+** Tokens involved: SUB MUL LEQ EQ ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr AND expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 20, looking ahead at SUB, reducing production
+** expr -> expr AND expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr AND expr . 
+
+** In state 20, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr AND expr 
+         expr . SUB expr 
+
+** Conflict (shift/reduce) in state 18.
+** Tokens involved: SUB OR MUL LEQ EQ AND ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr EQ expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 18, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr EQ expr 
+        expr . SUB expr 
+
+** In state 18, looking ahead at SUB, reducing production
+** expr -> expr EQ expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr EQ expr . 
+
+** Conflict (shift/reduce) in state 16.
+** Tokens involved: SUB OR MUL LEQ EQ AND ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr LEQ expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 16, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr LEQ expr 
+         expr . SUB expr 
+
+** In state 16, looking ahead at SUB, reducing production
+** expr -> expr LEQ expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr LEQ expr . 
+
+** Conflict (shift/reduce) in state 14.
+** Tokens involved: SUB OR MUL LEQ EQ AND ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr MUL expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 14, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr MUL expr 
+         expr . SUB expr 
+
+** In state 14, looking ahead at SUB, reducing production
+** expr -> expr MUL expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr MUL expr . 
+
+** Conflict (shift/reduce) in state 12.
+** Tokens involved: SUB MUL LEQ EQ ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr OR expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 12, looking ahead at SUB, reducing production
+** expr -> expr OR expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr OR expr . 
+
+** In state 12, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr OR expr 
+        expr . SUB expr 
+
+** Conflict (shift/reduce) in state 10.
+** Tokens involved: SUB OR MUL LEQ EQ AND ADD
+** The following explanations concentrate on token SUB.
+** This state is reached from prog after reading:
+
+WHILE expr SUB expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE expr DO cmd 
+      (?)
+
+** In state 10, looking ahead at SUB, shifting is permitted
+** because of the following sub-derivation:
+
+expr SUB expr 
+         expr . SUB expr 
+
+** In state 10, looking ahead at SUB, reducing production
+** expr -> expr SUB expr
+** is permitted because of the following sub-derivation:
+
+expr SUB expr // lookahead token appears
+expr SUB expr . 
